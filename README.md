@@ -1,6 +1,6 @@
 # Puppetcam
 
-Example to export chrome tab as a video
+Export chrome tab as a video
 
 
 1. Exported videos are stored in Downloads folder
@@ -9,14 +9,13 @@ Example to export chrome tab as a video
 
 ### Dependencies
 
-1. xvfb
-2. npm modules listed in package.json
+1. npm modules listed in package.json
 
 ### Usage
 
 ```sh
 npm install
-node export.js http://tobiasahlin.com/spinkit/ spinner.webm
+node export.js http://tobiasahlin.com/spinkit/ spinner.webm 1280x720 10s
 ```
 
 
@@ -24,7 +23,14 @@ Thanks to [@cretz](https://github.com/cretz) for helping with automatic tab sele
 
 #### Motivation
 
-Was looking for a method to export a video of user actions rendered using our custom player used in [uxlens](https://uxlens.com). Export has to happen on a server in an automated fashion and hence the usage of xvfb.
+Was looking for a method to use CSS+JS as motion design tools.
+So on needed a proper way to export browser view as a video file.
 
 #### Sample video
 [![Puppetcam](https://img.youtube.com/vi/f7Vdd0ExWiY/0.jpg)](https://www.youtube.com/watch?v=f7Vdd0ExWiY "Puppetcam")
+
+#### Changelog
+
+- Change Puppeteer version to 1.7
+- Add size and length parameter
+- Fix size parameter (setViewport, deviceScaleFactor)

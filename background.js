@@ -11,7 +11,7 @@ chrome.runtime.onConnect.addListener(port => {
         filename = msg.filename
         break
       case 'REC_STOP':
-        recorder.stop()    
+        recorder.stop()
         break
       case 'REC_CLIENT_PLAY':
         if(recorder){
@@ -26,20 +26,15 @@ chrome.runtime.onConnect.addListener(port => {
             video: {
               mandatory: {
                 chromeMediaSource: 'desktop',
-                chromeMediaSourceId: streamId,
-                minWidth: 1280,
-                maxWidth: 1280,
-                minHeight: 720,
-                maxHeight: 720,
-                minFrameRate: 60,
+                chromeMediaSourceId: streamId
               }
             }
           }, stream => {
             var chunks=[];
             recorder = new MediaRecorder(stream, {
-                videoBitsPerSecond: 2500000,
+                videoBitsPerSecond: 5000000,
                 ignoreMutedMedia: true,
-                mimeType: 'video/webm'
+                mimeType: 'video/webm',
             });
             recorder.ondataavailable = function (event) {
                 if (event.data.size > 0) {
