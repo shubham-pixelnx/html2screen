@@ -2,11 +2,6 @@
 
 html2screen export html animation to video file.
 
-
-### 
-
-1. 
-
 ### Usage
 
 ```sh
